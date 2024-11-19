@@ -28,7 +28,7 @@
     <h2>Talks:</h2>
     <ul>
         <li>Oct. 15, 2024, “An ongoing revolution in quantum many-body theory” (in Chinese) at University of Science & Technology of China.
-        <ul>
+        <ul class="nested-list"> <!--让子list间距比较好看；关于nested-list的具体设置在整段代码的最后-->
             <li>Video recording: <a href="https://www.koushare.com/live/details/37923">koushare</a> or <a href="https://www.bilibili.com/video/BV15oyoYTEfZ/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">bilibili</a>.</li>
             <li><a href="ustc_2024.pdf">Slides</a></li>            
         </ul>
@@ -79,6 +79,19 @@ Conformal field theory and a new geometry, Liang Kong, Mathematical Foundations 
         <li>Postdoc, Max Planck Institute for Mathematics in the Sciences, Leipzig, Germany</li>
     </ol>
 
-    
+<style>
+  /* 去除子项之间的外边距 */
+  .nested-list {
+    margin: 0;
+    padding-left: 20px; /* 让子列表有一定的缩进 */
+  }
+
+  /* 去除子项的外边距和内边距 */
+  .nested-list li {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
 </body>
 </html>

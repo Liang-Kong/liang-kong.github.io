@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孔良 | 个人学术主页</title>
+    <!-- 引入 Google Font 优雅字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- 全局样式与重置 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* --- 主容器 (毛玻璃效果) --- */
+        .app-container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        /* --- 导航栏 --- */
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 0.8rem;
+            margin-bottom: 2.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            padding: 0.6rem 1.6rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(4px);
+            border: 1px solid transparent;
+        }
+
+        .nav-btn i {
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #0f172a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-btn.active {
+            background: #ffffff;
+            color: #2563eb;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* --- 页面容器 --- */
+        .page-content {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 2rem 2.2rem;
+            min-height: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- 每个页面 (默认隐藏) --- */
+        .page {
+            display: none;
+            animation: fadeSlideIn 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        .page.active-page {
+            display: block;
+        }
+
+        @keyframes fadeSlideIn {
+            0% { opacity: 0; transform: translateY(16px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- 排版与组件 --- */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .page h1 i {
+            color: #2563eb;
+            margin-right: 12px;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #475569;
+            margin-bottom: 1.8rem;
+            border-left: 5px solid #2563eb;
+            padding-left: 1.2rem;
+            background: rgba(37, 99, 235, 0.03);
+            border-radius: 0 8px 8px 0;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 2rem 0 1rem;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.15);
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 列表样式优化 */
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+        }
+
+        .nested-list {
+            margin: 0.2rem 0 0.5rem 0;
+            padding-left: 1.8rem;
+            list-style-type: circle;
+        }
+        .nested-list li {
+            margin-bottom: 0.2rem;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 名片式卡片 (用于首页) */
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            margin: 0.5rem 0 1.2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .motto {
+            text-align: right;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #475569;
+            font-size: 1.15rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+            padding-right: 0.5rem;
+            border-right: 4px solid #94a3b8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 1.5rem 1rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.25s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card i {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h3 {
+            margin: 0.3rem 0 0.2rem;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        /* 联系卡片 */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: rgba(255,255,255,0.4);
+            padding: 0.8rem 2rem 0.8rem 1.5rem;
+            border-radius: 60px;
+            margin-bottom: 0.8rem;
+            max-width: 400px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .contact-item i {
+            width: 2rem;
+            color: #2563eb;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 640px) {
+            .app-container { padding: 1.2rem; }
+            .nav-btn { padding: 0.4rem 1rem; font-size: 0.85rem; }
+            .page-content { padding: 1.2rem; }
+            h1 { font-size: 2rem; }
+            .motto { text-align: left; border-right: none; border-left: 4px solid #94a3b8; padding-left: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 导航栏 -->
+        <nav class="nav-bar">
+            <button class="nav-btn active" data-page="home"><i class="fas fa-home"></i> 首页</button>
+            <button class="nav-btn" data-page="cv"><i class="fas fa-graduation-cap"></i> 履历</button>
+            <button class="nav-btn" data-page="research"><i class="fas fa-microscope"></i> 研究</button>
+            <button class="nav-btn" data-page="talks"><i class="fas fa-video"></i> 报告</button>
+            <button class="nav-btn" data-page="contact"><i class="fas fa-envelope"></i> 联系</button>
+        </nav>
+
+        <!-- 页面内容 -->
+        <div class="page-content">
+            <!-- ========== 首页 ========== -->
+            <div id="page-home" class="page active-page">
+                <h1><i class="fas fa-user-astronaut"></i> Liang Kong <span style="font-size:1.8rem;">孔良</span></h1>
+                <div class="motto">“A dialogue between mathematics and physics”</div>
+                <img src="fern.jpeg" alt="Welcome" class="hero-img" onerror="this.style.display='none'">
+                
+                <h2>研究兴趣 <i class="fas fa-arrow-right" style="color: #2563eb; font-size: 1.2rem;"></i></h2>
+                <p>我致力于物理、数学与自然哲学的研究，在物理学期刊和数学期刊均发表过论文。我的长期目标是发展量子多体理论的新演算（包括相变的新范式），并更深入地理解时空的起源。</p>
+                <div class="feature-grid">
+                    <div class="feature-card"><i class="fas fa-atom"></i><h3>物理</h3><p>拓扑/共形/量子场论，凝聚态中的量子相（拓扑序、SPT/SET、对称破缺序、量子液体），相变与量子引力。</p></div>
+                    <div class="feature-card"><i class="fas fa-superscript"></i><h3>数学</h3><p>顶点算子代数、共形/拓扑网、算子代数、高阶范畴、高阶代数、高阶表示、因子化同调、几何朗兰兹。</p></div>
+                </div>
+                <p style="margin-top: 0.5rem;">📄 研究总结：<a href="LK_research.pdf" target="_blank">Liang Kong's Research</a></p>
+            </div>
+
+            <!-- ========== 履历 ========== -->
+            <div id="page-cv" class="page">
+                <h1><i class="fas fa-timeline"></i> 履历</h1>
+                <div class="subhead">教育背景与职业生涯</div>
+                
+                <h2><i class="fas fa-user-graduate" style="color: #2563eb; margin-right: 10px;"></i>教育</h2>
+                <ul>
+                    <li><strong>Ph.D. in Mathematics</strong>, Rutgers, the State University of New Jersey (2005)</li>
+                    <li><strong>M.S. in Physics</strong>, University of Houston (1997)</li>
+                    <li><strong>B.Sc. in Physics</strong>, University of Science and Technology of China (中国科学技术大学) (1994)</li>
+                </ul>
+
+                <h2><i class="fas fa-briefcase" style="color: #2563eb; margin-right: 10px;"></i>职业生涯</h2>
+                <ol>
+                    <li>Research Fellow (研究员), International Quantum Academy</li>
+                    <li>Research Fellow (研究员), Southern University of Science and Technology (南方科技大学)</li>
+                    <li>Associate Professor, YMSC, Tsinghua University (丘成桐数学科学中心，清华大学)</li>
+                    <li>Lecturer (讲师), Department of Mathematics, University of New Hampshire</li>
+                    <li>Research Associate, Center of Mathematical Sciences and Applications (CMSA), Harvard University</li>
+                    <li>Associate Member (副研究员), Institute for Advanced Study at Tsinghua University (清华大学高等研究院)</li>
+                    <li>Postdoc, California Institute of Technology, USA</li>
+                    <li>Postdoc, Hausdorff Research Institute for Mathematics, Bonn, Germany</li>
+                    <li>Postdoc, Max Planck Institute for Mathematics, Bonn</li>
+                    <li>Postdoc, IHÉS, France</li>
+                    <li>Postdoc, Max Planck Institute for Mathematics in the Sciences, Leipzig, Germany</li>
+                </ol>
+            </div>
+
+            <!-- ========== 研究 ========== -->
+            <div id="page-research" class="page">
+                <h1><i class="fas fa-book-open"></i> 研究</h1>
+                <div class="subhead">出版物与中文文章</div>
+                
+                <h2><i class="fas fa-file-alt" style="color: #2563eb; margin-right: 10px;"></i>出版物 (arXiv)</h2>
+                <p>大部分文章见：<a href="http://arxiv.org/a/kong_l_1.html" target="_blank">http://arxiv.org/a/kong_l_1.html</a></p>
+                <p><strong>最新更新：</strong></p>
+                <ol>
+                    <li><a href="condensation_v5.pdf" target="_blank">Higher Condensation Theory</a> (2026/03/21, 对 arXiv:2403.07813 的小修订)</li>
+                    <li><a href="main.pdf" target="_blank">“An invitation to topological orders and category theory”</a> (2025/04/28, 对 arXiv:2205.05565 的小修订)
+                        <ul class="nested-list">
+                            <li>最新版本修正了引用错误，重写了引言，并增加了关于广义/非可逆/拓扑对称性的参考文献。</li>
+                            <li>我们计划发布一个重大版本，重写任意子的微观定义，并增加凝聚理论、G-交叉融合范畴、拓扑Wick旋转等新主题。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2><i class="fas fa-language" style="color: #2563eb; margin-right: 10px;"></i>中文文章</h2>
+                <ol>
+                    <li><a href="Kong_MP_to_Math.pdf" target="_blank">《浅议现代数学物理对数学的影响》</a> (2017年发表于《数理人文》)</li>
+                    <li>知乎专栏：<a href="https://www.zhihu.com/column/c_178032739" target="_blank">“数学和物理的对话”</a></li>
+                </ol>
+            </div>
+
+            <!-- ========== 报告 ========== -->
+            <div id="page-talks" class="page">
+                <h1><i class="fas fa-presentation"></i> 在线报告</h1>
+                <div class="subhead">学术演讲与视频记录</div>
+                <p>以下为近年部分在线报告（按时间倒序）：</p>
+                <ol>
+                    <li><strong>Sept. 15, 2025</strong> – “A mathematical theory of the gapped/gapless boundaries of 2+1D topological orders”, Isaac Newton Institute, UK.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=DeOuhJEiZLA&t=1493s" target="_blank">YouTube</a> | <a href="https://www.bilibili.com/video/BV1m8phzkEWk/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>June 24, 2025</strong> – “From the notion of a morphism between QFTs to SymTFT”, String Math 2025, BIMSA.
+                        <ul class="nested-list"><li>视频: <a href="https://bimsa.net/bimsavideo.html?id=42823.mp4" target="_blank">BIMSA</a> | <a href="stringmath_2025_Final.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>June 9-20, 2025</strong> – “Global Quantum Many Body Theory” (in Chinese), IMFP 合肥.
+                        <ul class="nested-list"><li>视频: <a href="https://www.koushare.com/live/details/43586" target="_blank">Koushare</a></li></ul>
+                    </li>
+                    <li><strong>June 5, 2025</strong> – “From the notion of a morphism between QFTs to SymTFT”, AdS Seminar, YMSC.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1UDTgzCEFu/" target="_blank">Bilibili</a> | <a href="https://www.youtube.com/watch?v=hdW8gUxVVlY&t=5337s" target="_blank">YouTube</a> | <a href="Tsinghua_2025.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>Oct. 15, 2024</strong> – “An ongoing revolution in quantum many-body theory” (in Chinese), USTC.
+                        <ul class="nested-list"><li>视频: <a href="https://www.koushare.com/live/details/37923" target="_blank">Koushare</a> | <a href="https://www.bilibili.com/video/BV15oyoYTEfZ/" target="_blank">Bilibili</a> | <a href="ustc_2024.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>Sept. 13, 2024</strong> – “Higher Condensation Theory”, Simons Center for Geometry and Physics.
+                        <ul class="nested-list"><li>视频: <a href="https://scgp.stonybrook.edu/video/video.php?id=6696" target="_blank">SCGP</a> | <a href="https://www.bilibili.com/video/BV14hrPYYEGy/" target="_blank">Bilibili</a> | <a href="simons_2024_v2.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>July 25, 2024</strong> – “Higher Condensation Theory”, ICBS, Beijing.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=a2Zy-DQraTM" target="_blank">YouTube</a> | <a href="https://www.bilibili.com/video/BV1TE4m197zt/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>Sept. 7, 2023</strong> – “A morphism between two QFT's”, Shenzhen–Nagoya Workshop.
+                        <ul class="nested-list"><li>视频: <a href="https://www.koushare.com/live/details/21559?vid=66479" target="_blank">Koushare</a> | <a href="Morphism_Nagoya.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>Aug. 16, 2023</strong> – “A morphism between two QFT's”, Nordita, Sweden.
+                        <ul class="nested-list"><li><a href="Sweden_2023.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                    <li><strong>July 25, 2023</strong> – “Global quantum many-body theory”, ICBS, Beijing.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1pr4y1Z7vz/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>July 25, 2023</strong> – “Global quantum many-body theory”, Symmetry Seminar.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=6_v6JOLTYDE&t=4393s" target="_blank">YouTube</a> | <a href="https://www.bilibili.com/video/BV1ks4y1t7sJ/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>July 25, 2023</strong> – “Topological Wick rotation and holographic duality”, Harvard CMSA Seminar.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=9tPLFPxjQfc&t=1942s" target="_blank">YouTube</a> | <a href="https://www.bilibili.com/video/BV1s24y1h7aX/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>Sept. 27 & Oct. 4, 2022</strong> – “Topological Wick rotation and holographic duality I & II” (in Chinese), BIMSA & Tsinghua.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1ee411K7my" target="_blank">I</a> | <a href="https://www.bilibili.com/video/BV1we4y1q7K8" target="_blank">II</a></li></ul>
+                    </li>
+                    <li><strong>April 27, May 11 & May 18, 2022</strong> – “Rational Conformal Field Theories I, II & III” (in Chinese), BIMSA & Tsinghua.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1t44y1g7e8" target="_blank">I</a> | <a href="https://www.bilibili.com/video/BV1eY4y1b7Cv" target="_blank">II</a> | <a href="https://www.bilibili.com/video/BV1AR4y1w7aD" target="_blank">III</a></li></ul>
+                    </li>
+                    <li><strong>Nov. 26, 2021</strong> – “Ising chain and enriched fusion category” (in Chinese), BIMSA & Tsinghua.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1BZ4y1Q7tS/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>Sept. 20, 2021</strong> – “Global quantum many-body theory” (in Chinese), Tsinghua.
+                        <ul class="nested-list"><li>视频: <a href="https://www.bilibili.com/video/BV1gq4y1G7bx/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>June 12, 2020</strong> – “On the classification of topological orders with finite internal symmetries”, Harvard.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=hNQFA2WNx1Y&t=2313s" target="_blank">YouTube</a> | <a href="https://www.bilibili.com/video/BV1he411k7A9/" target="_blank">Bilibili</a></li></ul>
+                    </li>
+                    <li><strong>June 12, 2020</strong> – “Infinite more is more different — Why shall we care about topological orders?” (in Chinese), Online Lecture.
+                        <ul class="nested-list"><li>视频: <a href="https://www.koushare.com/live/details/42?vid=5321" target="_blank">Koushare</a></li></ul>
+                    </li>
+                    <li><strong>Oct. 4, 2019</strong> – “A unified mathematical theory of gapped and gapless boundaries of 2+1D topological orders”, Harvard CMSA.
+                        <ul class="nested-list"><li>视频: <a href="https://www.youtube.com/watch?v=fKFRml4DWO0&t=4435s" target="_blank">YouTube</a></li></ul>
+                    </li>
+                    <li><strong>Sept. 24, 2018</strong> – “How to take a square root of a modular tensor category?”, Banff.
+                        <ul class="nested-list"><li>视频: <a href="https://www.birs.ca/events/2018/5-day-workshops/18w5131/videos/watch/201809241446-Kong.html" target="_blank">Banff</a> | <a href="Banff_2018.pdf" target="_blank">Slides</a></li></ul>
+                    </li>
+                </ol>
+                <p style="margin-top: 0.5rem; color: #475569;"><i class="fas fa-info-circle"></i> 此处列出了部分在线报告，更多内容请参考原页面。</p>
+            </div>
+
+            <!-- ========== 联系 ========== -->
+            <div id="page-contact" class="page">
+                <h1><i class="fas fa-address-card"></i> 联系</h1>
+                <div class="subhead">保持沟通</div>
+                <img src="fern.jpeg" alt="Contact" style="max-width: 100%; height: auto; border-radius: 1.5rem; margin-bottom: 1.5rem; max-height: 200px; object-fit: cover; width: 100%;" onerror="this.style.display='none'">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> <span style="font-weight: 500;">kongustc<span style="display:none;">_no_spam</span>@outlook.com</span>
+                </div>
+                <div class="contact-item" style="max-width: 100%;">
+                    <i class="fas fa-globe"></i> <a href="https://liang-kong.github.io/" target="_blank">liang-kong.github.io</a>
+                </div>
+                <p style="margin-top: 1.2rem; color: #475569;"><i class="fas fa-shield-alt"></i> 请将邮箱地址中的 "at" 替换为 @。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const navBtns = document.querySelectorAll('.nav-btn');
+            const pages = document.querySelectorAll('.page');
+
+            function switchPage(pageId) {
+                // 隐藏所有页面
+                pages.forEach(page => page.classList.remove('active-page'));
+                // 显示目标页面
+                const targetPage = document.getElementById(`page-${pageId}`);
+                if (targetPage) targetPage.classList.add('active-page');
+                // 更新按钮激活状态
+                navBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.page === pageId) btn.classList.add('active');
+                });
+            }
+
+            navBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const pageId = this.dataset.page;
+                    if (pageId) switchPage(pageId);
+                });
+            });
+
+            // 确保初始状态正确（默认首页激活）
+            const activeBtn = document.querySelector('.nav-btn.active');
+            if (activeBtn) {
+                const defaultPage = activeBtn.dataset.page;
+                pages.forEach(page => page.classList.remove('active-page'));
+                const defaultPageEl = document.getElementById(`page-${defaultPage}`);
+                if (defaultPageEl) defaultPageEl.classList.add('active-page');
+            }
+        })();
+    </script>
+</body>
+</html>

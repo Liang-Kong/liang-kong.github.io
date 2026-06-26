@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孔良 | 个人学术主页</title>
+    <style>
+        /* --- 全局样式：古典书籍风格，基于模板 --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 暖纸色背景 */
+            background-color: #F6F0E6;
+            font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+            color: #1F1B16;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 主容器：米白卡片，模拟书页质感 */
+        .book-page {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #FFFCF7;
+            padding: 50px 60px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(31, 27, 22, 0.12);
+            border: 1px solid #D8CBBB;
+        }
+
+        /* --- 保留您原有的所有内容结构，仅调整样式 --- */
+
+        /* 标题风格 */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1F1B16;
+            margin: 0 0 0.2rem 0;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1F1B16;
+            margin: 2.2rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #E6DCCF; /* 柔和的分隔线 */
+        }
+
+        /* 图片：保持全宽，增加圆角与阴影，更融入书籍风格 */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin: 0.5rem 0 1.2rem 0;
+            border: 1px solid #D8CBBB;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 格言样式 */
+        .motto {
+            text-align: right;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #6F665E;
+            font-size: 1.2rem;
+            margin: -0.5rem 0 2rem 0;
+            padding-right: 0.5rem;
+            border-right: 4px solid #BFAF9D;
+        }
+
+        /* 段落与列表 */
+        p, li {
+            color: #2C241E;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        ul, ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 保留您原有的列表项间距 */
+        ul li, ol li {
+            margin-bottom: 10px;
+        }
+
+        /* 链接样式：温润的陶土色，非默认蓝色 */
+        a {
+            color: #A85F3B;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(168, 95, 59, 0.25);
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        a:hover {
+            color: #7F432B;
+            border-bottom-color: #7F432B;
+        }
+
+        /* 嵌套列表（您原有的 .nested-list） */
+        .nested-list {
+            margin: 0.2rem 0 0.5rem 0;
+            padding-left: 1.8rem;
+            list-style-type: circle;
+        }
+        .nested-list li {
+            margin-bottom: 0.2rem;
+            padding: 0;
+        }
+
+        /* 联系方式卡片样式（可选，使联系信息更突出） */
+        .contact-item {
+            background: #F8F2E8;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #D8CBBB;
+            margin-top: 0.5rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 640px) {
+            .book-page {
+                padding: 30px 25px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .motto {
+                text-align: left;
+                border-right: none;
+                border-left: 4px solid #BFAF9D;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-page">
+        <!-- ========== 您原始的所有内容，结构完全未变 ========== -->
+        <h1>Liang Kong (孔良)</h1>
+        <div class="motto">A dialogue between mathematics and physics</div>
+        <img src="fern.jpeg" alt="Welcome">
+
+        <h2>Education:</h2>
+        <ul>
+            <li>Ph. D in Mathematics, Rutgers, the State University of New Jersey (2005)</li>
+            <li>M.S. in Physics, University of Houston (1997)</li>
+            <li>B.Sc. in Physics, University of Science and Technology of China (中国科学技术大学）(1994)</li>
+        </ul>
+
+        <h2>Career:</h2>
+        <ol>
+            <li>Research Fellow (研究员), International Quantum Academy</li>
+            <li>Research Fellow (研究员), Southern University of Science and Technology（南方科技大学）</li>
+            <li>Associate Professor, YMSC, Tsinghua University（丘成桐数学科学中心，清华大学）</li>
+            <li>Lecturer (讲师), Department of Mathematics, University of New Hampshire</li>
+            <li>Research Associate, Center of Mathematical Sciences and Applications (CMSA), Harvard University</li>
+            <li>Associate Member (副研究员), Institute for Advanced Study at Tsinghua University (清华大学高等研究院）</li>
+            <li>Postdoc, California Institute of Technology, USA</li>
+            <li>Postdoc, Hausdorff Research Institute for Mathematics, Bonn, Germany</li>
+            <li>Postdoc, Max Planck Institute for Mathematics, Bonn</li>
+            <li>Postdoc, IHÉS, France</li>
+            <li>Postdoc, Max Planck Institute for Mathematics in the Sciences, Leipzig, Germany</li>
+        </ol>
+
+        <h2>Reseach Interests:</h2>
+        <p>I am interested in physics, mathematics and natural philosophy and have published research papers in both physics journals 
+        and mathematics journals. Although I was often regarded by my colleagues as a mathematician, all my works are motivated by fundamental questions in physics or natural philosophy. 
+        My long term goals are to develop a new calculus for quantum many-body theory or quantum field theory 
+        (including a new paradigm of phase transitions) and to gain a deeper understanding of the origin of space and time. 
+        A summary of my past research can be found here: <a href="LK_research.pdf">Liang Kong’s Research</a>. I provide a list of topics that I am interested in.</p> 
+        <ul>
+            <li><b>Physics:</b> topological/conformal/quantum field theories, quantum phases in condensed matter physics (including topological orders, SPT/SET orders, spontaneous symmetry-breaking orders, quantum liquids), phase transitions and quantum gravity.</li>
+            <li><b>Mathematics:</b> vertex operator algebras and their representations, conformal/topological nets, operator algebras, higher categories, higher algebras, higher representations, factorization homology, higher homotopy theory and geometric Langlands correspondence.</li> 
+        </ul>
+        
+        <h2>Publications:</h2>
+        <p>See most of my arXiv articles here: <a href="http://arxiv.org/a/kong_l_1.html">http://arxiv.org/a/kong_l_1.html</a>. I will keep the latest updates of a few arXiv papers below.</p> 
+        <ol>
+            <li> The latest version of the paper <a href="condensation_v5.pdf">Higher Condensation Theory</a> (03/21/2026, 
+                a minor revision of the third arXiv version <a href="https://arxiv.org/abs/2403.07813">arXiv:2403.07813</a>.) 
+            </li>
+            <li>
+                The latest version of <a href="main.pdf">“An invitation to topological orders and category theory”</a>: 
+                (04/28/2025, a minor revision of <a href="https://arxiv.org/abs/2205.05565">arXiv:2205.05565</a>) 
+                <ul class="nested-list">
+                     <li>
+                         In the latest version, we corrected some mistakes in citations about modular tensor categories in the earlier versions. 
+                         We also rewrote the introduction section and added some references on generalized/non-invertible/topological symmetries.
+                     </li>
+                     <li>    
+                         We are planing a major version of this paper. In particular, we plan to rewrite the microscopic definition of an anyon.
+                         Ideally, we would like to provide a short review of all known approaches towards a rigorous definition of an anyon, 
+                         including the approach based on the superselection sectors of the net of local operator algebras 
+                         and the entanglement bootstrap approach. We plan to add a lot of new topics, including (anyon) condensation theory, 
+                         G-crossed braided fusion categories, (de)-equivariantizations, enriched fusion categories, 
+                         topological Wick rotations, Ising chain, etc. What is really amazing is that one can see the emergence of 
+                         all these rich mathematical structures and deep physical principles within the toric code model. 
+                     </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Articles in Chinese:</h2>
+        <ol>
+            <li>An article <a href="Kong_MP_to_Math.pdf">“Impact of Modern Mathematical Physics On Mathematics”</a> in Chinese《浅议现代数学物理对数学的影响》published online in《数理人文》in 2017 </li>
+            <li>My Column in zhihu.com: <a href="https://www.zhihu.com/column/c_178032739">“知乎专栏: 数学和物理的对话”</a> (in Chinese)</li>
+        </ol>
+
+        <h2>Online Talks:</h2>
+        <ol>
+            <li>Sept. 15, 2025, “A mathematical theory of the gapped/gapless boundaries of 2+1D topological orders”, Seminar at Issac Newton Institute for Mathematical Sciences, Cambridge, UK.
+            <ul class="nested-list">
+                <li>Video recording: 
+                    <a href="https://www.youtube.com/watch?v=DeOuhJEiZLA&t=1493s">YouTube</a> 
+                    or
+                    <a href="https://www.bilibili.com/video/BV1m8phzkEWk/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>
+                </li>
+            </ul>
+            </li>
+            <li>June 24, 2025, “From the notion of a morphism between QFTs to SymTFT”, String Math 2025, BIMSA, Beijing.
+            <ul class="nested-list">
+                <li>Video recording: 
+                    <a href="https://bimsa.net/bimsavideo.html?id=42823.mp4">String-Math 2025 website</a> </li>
+                <li><a href="stringmath_2025_Final.pdf">Slides</a> (in English) </li>            
+            </ul>
+            </li>
+            <li>June. 9-20, 2025, “Global Quantum Many Body Theory” (in Chinese, 整体量子多体理论), blackboard lectures (joint with Zhi-Hao Zhang), 
+                including a detailed explanation of the mathematical theory of gapped and gapless edges of 2+1D topological orders, IMFP（合肥数学与基础物理高等研究所）
+            <ul class="nested-list">
+                <li>Video recording: 
+                    <a href="https://www.koushare.com/live/details/43586">Koushare</a> </li>              
+            </ul>
+            </li>
+            <li>June 5, 2025, “From the notion of a morphism between QFTs to SymTFT”, AdS Seminar, YMSC, Tsinghua University, Beijing.
+            <ul class="nested-list">
+                <li>Video recording: 
+                    <a href="https://www.bilibili.com/video/BV1UDTgzCEFu/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">BiliBili</a> 
+                    or
+                    <a href="https://www.youtube.com/watch?v=hdW8gUxVVlY&t=5337s">YouTube</a>
+                </li>
+                <li><a href="Tsinghua_2025.pdf">Slides</a> (in English) </li>            
+            </ul>
+            </li>
+            <li>Oct. 15, 2024, “An ongoing revolution in quantum many-body theory” (in Chinese, 量子多体理论中正在发生的革命), University of Science & Technology of China.
+            <ul class="nested-list">
+                <li>Video recording: 
+                    <a href="https://www.koushare.com/live/details/37923">koushare</a> 
+                    or 
+                    <a href="https://www.bilibili.com/video/BV15oyoYTEfZ/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">bilibili</a>.</li>
+                <li><a href="ustc_2024.pdf">Slides</a> (in English) </li>            
+            </ul>
+            </li>
+            <li>
+                Sept. 13, 2024, “Higher Condensation Theory” (in English), workshop “Applications of Generalized Symmetries and Topological Defects to Quantum Matter”, at Simons Center for Geometry and Physics, September 9 – 13, 2024.
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://scgp.stonybrook.edu/video/video.php?id=6696">SCGP_StonyBrook</a>
+                        or
+                        <a href="https://www.bilibili.com/video/BV14hrPYYEGy/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>
+                    </li>
+                    <li><a href="simons_2024_v2.pdf">Slides</a>.</li>            
+                </ul>
+            </li>
+            <li>
+                July 25, 2024, “Higher Condensation Theory” (in English), International Congress of Basic Science, Beijing, 2024. 
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.youtube.com/watch?v=a2Zy-DQraTM">YouTube</a>
+                        or
+                        <a href="https://www.bilibili.com/video/BV1TE4m197zt/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                September 7, 2023, “A morphism between two QFT’s” (in English), an online talk given at the workshop “Shenzhen–Nagoya Workshop on Quantum Science 2023”
+                <ul class="nested-list">
+                    <li>Video recording: <a href="https://www.koushare.com/live/details/21559?vid=66479">Koushare</a> </li>
+                    <li><a href="Morphism_Nagoya.pdf">Slides</a>.</li>            
+                </ul>
+            </li>
+            <li>
+                August. 16, 2023, “A morphism between two QFT’s” (in English), a seminar talk given at the workshop “NORDITA program on Categorical Aspects of Symmetries”, at Nordita, Stockholm, Sweden, August 14–25, 2023.
+                <ul class="nested-list">
+                    <li>Video recording: </li>
+                    <li><a href="Sweden_2023.pdf">Slides</a>.</li>            
+                </ul>
+            </li>
+            <li>
+                July 25, 2023, “Global quantum many-body theory” (in English), the International Congress of Basic Science, Beijing, 2023. 
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.bilibili.com/video/BV1pr4y1Z7vz/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                July 25, 2023, “Global quantum many-body theory” (in English), Symmetry Seminar. 
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.youtube.com/watch?v=6_v6JOLTYDE&t=4393s">YouTube</a>
+                        or
+                        <a href="https://www.bilibili.com/video/BV1ks4y1t7sJ/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                July 25, 2023, “Topological Wick rotation and holographic duality” (in English), Harvard CMSA Seminar. 
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.youtube.com/watch?v=9tPLFPxjQfc&t=1942s">YouTube</a>
+                        or
+                        <a href="https://www.bilibili.com/video/BV1s24y1h7aX/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Sept. 27 & Oct. 4, 2022, “Topological Wick rotation and holographic duality I & II” (in Chinese), BIMSA and Tsinghua "Topological Orders and Category Theory" Seminar Series in Autumn 2022.
+                <ul class="nested-list">
+                    <li>Video recording: 
+                        <a href="https://www.bilibili.com/video/BV1ee411K7my?spm_id_from=333.788.videopod.sections">I</a> & <a href="https://www.bilibili.com/video/BV1we4y1q7K8?spm_id_from=333.788.videopod.sections">II</a>.
+                </ul>
+            </li>
+            <li>
+                April 27, May 11 & May 18, 2022, “Rational Conformal Field Theories I, II & III” (in Chinese), BIMSA and Tsinghua "Topological Orders and Category Theory" Seminar Series in Spring 2022.
+                <ul class="nested-list">
+                    <li>Video recording: 
+                        <a href="https://www.bilibili.com/video/BV1t44y1g7e8?spm_id_from=333.788.videopod.sections">I</a>, <a href="https://www.bilibili.com/video/BV1eY4y1b7Cv?spm_id_from=333.788.videopod.sections">II</a> & <a href="https://www.bilibili.com/video/BV1AR4y1w7aD?spm_id_from=333.788.videopod.sections">III</a>.
+                </ul>
+            </li>
+            <li>
+                Nov. 26, 2021, “Ising chain and enriched fusion category” (in Chinese), BIMSA and Tsinghua "Topological Orders and Category Theory" Seminar Series in Autumn 2021.
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.bilibili.com/video/BV1BZ4y1Q7tS/?spm_id_from=333.337.search-card.all.click">Bilibili</a>.</li>
+                </ul>
+            </li>
+            <li>
+                Sept. 20, 2021, “Global quantum many-body theory” (in Chinese， 整体量子多体理论), Seminar at Tsinghua University,  
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.bilibili.com/video/BV1gq4y1G7bx/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>.</li>
+                </ul>
+            </li>
+            <li>
+                June 12, 2020, “On the classification of topological orders with finite internal symmetries” (in English), Harvard "Mathematical Picture Language" Seminar.
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.youtube.com/watch?v=hNQFA2WNx1Y&t=2313s">YouTube</a>
+                        or
+                        <a href="https://www.bilibili.com/video/BV1he411k7A9/?spm_id_from=333.337.search-card.all.click&vd_source=9ddb81b9cbe4911221657d32461cabdf">Bilibili</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                June 12, 2020, “Infinite more is more different — Why shall we care about topological orders?” (in Chinese，为什么需要关注拓扑序？), Online Lecture.
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.koushare.com/live/details/42?vid=5321">Koushare</a>.</li>
+                </ul>
+            </li>
+            <li>
+                Oct. 4, 2019, “A unified mathematical theory of gapped and gapless boundaries of 2+1D topological orders” (in English), Harvard CMSA Seminar, 2019. 
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.youtube.com/watch?v=fKFRml4DWO0&t=4435s">YouTube</a>.</li>
+                </ul>
+            </li>
+            <li>
+                September 24, 2018, “How to take a square root of a modular tensor category?” (in English), Banff International Research Station
+                <ul class="nested-list">
+                    <li>Video recording:
+                        <a href="https://www.birs.ca/events/2018/5-day-workshops/18w5131/videos/watch/201809241446-Kong.html">Banff_Videos</a>.
+                    </li>
+                    <li><a href="Banff_2018.pdf">Slides</a>.</li>  
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Contact me:</h2> 
+        <ul>
+            <li class="contact-item" style="list-style: none; padding-left: 0;">Email: kongustc"at"outlook.com</li>
+        </ul>
+    </div>
+    <!-- end book-page -->
+</body>
+</html>
